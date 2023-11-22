@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello TdA</title>
+</head>
+<body>
+    <h1>Hello TdA</h1>
+    <div id="apiData"></div>
+
+    <script>
+        // Načítání dat z API
+        fetch('/api/index.json')
+            .then(response => response.json())
+            .then(data => {
+                // Zobrazení dat na stránce
+                document.getElementById('apiData').innerText = `API Data: ${JSON.stringify(data)}`;
+            })
+            .catch(error => console.error('Chyba při načítání dat z API:', error));
+    </script>
+</body>
+</html>
